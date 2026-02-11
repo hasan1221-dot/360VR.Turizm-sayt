@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Javascript-10.css">
+    <title>360 VR Turizm - Dunyoni O'zingizga Qarab Olib Chiqing</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo">🌍 360 VR Turizm</h1>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Bosh sahifa</a>
+                <a href="#tours" class="nav-link">Turlar</a>
+                <a href="#gallery" class="nav-link">Galeriya</a>
+                <a href="#contact" class="nav-link">Aloqa</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Dunyoni 360° da O'zlashtiring</h2>
+            <p>Eng go'zal joylarni virtual haqiqiy reallik orqali ziyarat qiling</p>
+            <button class="cta-button" onclick="scrollToTours()">Turlarni Ko'rish</button>
+        </div>
+    </section>
+    <section class="vr-viewer-section" id="gallery">
+        <div class="vr-container">
+            <div class="vr-viewer">
+                <img id="vrImage" class="vr-image" src="" alt="360 VR Ko'rinish">
+                <div class="vr-controls">
+                    <button id="leftBtn" class="control-btn" onclick="rotateLeft()">⬅️ Chapga</button>
+                    <button id="zoomInBtn" class="control-btn" onclick="zoomIn()">🔍+ Yaqinlash</button>
+                    <button id="zoomOutBtn" class="control-btn" onclick="zoomOut()">🔍- Uzoqlash</button>
+                    <button id="rightBtn" class="control-btn" onclick="rotateRight()">O'ngga ➡️</button>
+                </div>
+                <div class="vr-info">
+                    <h3 id="locationName">Joyni Tanlang</h3>
+                    <p id="locationDesc">Quyidagi turlardan birini tanlang va 360° ko'rinishni boshqaring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tours-section" id="tours">
+        <h2 class="section-title">Mavjud Turlar</h2>
+        <div class="tours-grid">
+            <div class="tour-card" onclick="selectTour(0)">
+                <div class="tour-icon">🏔️</div>
+                <h3>Everest Cho'qqisi</h3>
+                <p>Dunyoning eng baland cho'qqisi</p>
+                <span class="tour-tag">Nepol</span>
+            </div>
+            <div class="tour-card" onclick="selectTour(1)">
+                <div class="tour-icon">🏛️</div>
+                <h3>Kolizey</h3>
+                <p>Qadimiy Rim imperiyasining nishoni</p>
+                <span class="tour-tag">Italiya</span>
+            </div>
+            <div class="tour-card" onclick="selectTour(2)">
+                <div class="tour-icon">🗿</div>
+                <h3>Nazka Chiziqlar</h3>
+                <p>Drevni mistikniy shaharcha</p>
+                <span class="tour-tag">Peru</span>
+            </div>
+            <div class="tour-card" onclick="selectTour(3)">
+                <div class="tour-icon">🌊</div>
+                <h3>Maldivlar</h3>
+                <p>Samadiy orol paradi</p>
+                <span class="tour-tag">Maldivlar</span>
+            </div>
+            <div class="tour-card" onclick="selectTour(4)">
+                <div class="tour-icon">🏯</div>
+                <h3>Taj Mahal</h3>
+                <p>Sevgi va go'zallikning ramzi</p>
+                <span class="tour-tag">Hindiston</span>
+            </div>
+            <div class="tour-card" onclick="selectTour(5)">
+                <div class="tour-icon">🌳</div>
+                <h3>Amazon O'rmani</h3>
+                <p>Dunyoning "o'pkasi"</p>
+                <span class="tour-tag">Braziliya</span>
+            </div>
+        </div>
+    </section>
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3 id="visitCount">0</h3>
+                <p>Umumiy Ziyoratlar</p>
+            </div>
+            <div class="stat-item">
+                <h3>150+</h3>
+                <p>Mavjud Turlar</p>
+            </div>
+            <div class="stat-item">
+                <h3>45</h3>
+                <p>Mamlakat</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="userCount">0</h3>
+                <p>Foydalanuvchilar</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Biz Bilan Bog'laning</h2>
+        <div class="contact-container">
+            <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+                <input type="text" id="userName" placeholder="Ismingiz" required>
+                <input type="email" id="userEmail" placeholder="Email Manzilingiz" required>
+                <textarea id="userMessage" placeholder="Xabar yo'llab yuboring..." rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Xabar Yuborish</button>
+            </form>
+            <div class="contact-info">
+                <h3>Aloqa Ma'lumotlari</h3>
+                <p>📞 +998 (90) 123-45-67</p>
+                <p>📧 info@360vrvturizm.uz</p>
+                <p>📍 Toshkent, O'zbekiston</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">Facebook</a>
+                    <a href="#" class="social-btn">Instagram</a>
+                    <a href="#" class="social-btn">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 360 VR Turizm. Barcha huquqlar himoyalangan. | Tayyorlangan: It Park by Behruz</p>
+    </footer>
+
+    <script src="Javascript-10.js" defer></script>
+</body>
+</html>
